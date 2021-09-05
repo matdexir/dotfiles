@@ -1,0 +1,5 @@
+allow_images=true
+allow_markup=true
+insensitive=true
+lines=5
+gtk-dark=true

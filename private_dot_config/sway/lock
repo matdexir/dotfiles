@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+tmpbg="/tmp/screen.png"
+grim "$tmpbg"; corrupter "$tmpbg" "$tmpbg"
+swaylock -i "$tmpbg"; rm "$tmpbg"

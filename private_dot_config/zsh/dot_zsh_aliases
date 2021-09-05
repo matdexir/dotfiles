@@ -1,0 +1,11 @@
+alias ls='exa --icons'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+alias md=mkdir
+alias r=ranger
+alias v=nvim
+
+# source ~/.zshrc
+alias sc="source $HOME/.zshrc"

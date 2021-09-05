@@ -1,0 +1,96 @@
+#
+# ~/.bashrc
+#
+export PATH="/bin:/sbin:/usr/bin:/var/lib/snapd/snap/bin:/usr/lib:/usr/local/bin"
+export PATH="$PATH:/home/matdexir/Files/Projects/trash"
+# sway config
+
+# export XDG_SESSION_TYPE=wayland
+# export XDG_SESSION_DESKTOP=sway
+# export XDG_CURRENT_DESKTOP=sway
+# export DESKTOP_SESSION=sway
+
+# export LIBSEAT_BACKEND=logind
+
+# export MOZ_ENABLE_WAYLAND=1
+# export CLUTTER_BACKEND=wayland
+# export SDL_VIDEODRIVER=wayland
+
+# history file
+export HISTFILE="$XDG_DATA_HOME"/bash/history
+
+export PATH="${PATH}:${HOME}/.local/bin/:$HOME/Files/neovim/build/bin/"
+# XDG specific configs
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_CACHE_HOME="$HOME"/.cache
+export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_STATE_HOME="$HOME"/.local/state
+
+# Partial migrations
+export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+
+# Cargo & rust
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export PATH="$PATH:$CARGO_HOME"/bin
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+# gtk 
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+
+# gdb
+export GDBHISTFILE="$XDG_DATA_HOME"/gdb/history
+alias gdb='gdb -nh -ex "source $XDG_CONFIG_HOME/gdb/gef.py" '
+
+# less
+export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+
+#git
+export GITSTATUS_CACHE_DIR="$XDG_CACHE_HOME"/gitstatus
+
+# Node
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+export PATH="$PATH:$XDG_DATA_HOME/npm/bin"
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+
+# Mplayer
+export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
+
+# Pylint
+export PYLINTHOME="$XDG_CACHE_HOME"/pylint
+# Wget
+export WGETRC="$XDG_CONFIG_HOME"/wgetrc
+alias wget='wget --hsts-file="$XDG_CACHE_HOME"/wget-hsts'
+
+# wpm
+alias wpm='wpm --stats-file $XDG_CACHE_HOME/wpm/wpm.csv'
+
+#lua-format
+alias lua-format=/usr/lib/luarocks/rocks-5.4/luaformatter/scm-1/bin/lua-format
+# alias sway='sway.sh'
+
+export GOPATH=$HOME/.local/go
+export PATH="$PATH:$GOPATH/bin"
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# a few aliases
+alias ls='exa --icons'
+alias rm='rm -i'
+PS1='[\u@\h \W]\$ '
+. "$CARGO_HOME"/env
+source /usr/share/nvm/init-nvm.sh
+alias luamake=/home/matdexir/lua-language-server/3rd/luamake/luamake
+
+# if [ "$TERM" = "linux" -a "`tty`" = "/dev/tty1" ]; then
+        # exec sway.sh
+        # exit 0
+# fi
