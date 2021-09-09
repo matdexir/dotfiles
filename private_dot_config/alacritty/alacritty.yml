@@ -146,6 +146,3 @@ cursor:
   blinking: on
   blink-interval: 750
   unfocused_hollow: true
-
-key_bindings:
-  - { key: N, mods: Control, action: SpawnNewInstance }
