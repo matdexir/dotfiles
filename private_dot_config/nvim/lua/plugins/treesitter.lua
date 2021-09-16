@@ -6,5 +6,13 @@ require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = {} -- list of language that will be disabled
+    },
+    indent = {
+        enable = true,
     }
 }
+
+-- vim.api.nvim_exec([[
+--   set foldmethod=expr
+--   set foldexpr=nvim_treesitter#foldexpr()
+-- ]], true)

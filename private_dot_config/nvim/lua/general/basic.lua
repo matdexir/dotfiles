@@ -7,10 +7,10 @@ vim.o.splitright = true -- Vertical splits will automatically be to the right
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 
 -- identation
-vim.cmd('set ts=4') -- Insert 2 spaces for a tab
-vim.cmd('set sw=4') -- Change the number of space characters inserted for indentation
-vim.cmd('set expandtab') -- Converts tabs to spaces
-vim.bo.smartindent = true -- Makes indenting smart
+-- vim.cmd('set ts=4') -- Insert 2 spaces for a tab
+-- vim.cmd('set sw=4') -- Change the number of space characters inserted for indentation
+-- vim.cmd('set expandtab') -- Converts tabs to spaces
+-- vim.bo.smartindent = true -- Makes indenting smart
 
 -- visual cursorline
 vim.wo.cursorline = true -- Enable highlighting of the current line
@@ -42,6 +42,5 @@ vim.o.guifont = "MesloLGS NF:13"
 -- Default folding option
 -- vim.o.foldmethod = "indent"
 -- Disable autocommenting
-vim.cmd(
-    'autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
+vim.cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
 
