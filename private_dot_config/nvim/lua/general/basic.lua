@@ -30,11 +30,12 @@ vim.o.hidden = true -- Required to keep multiple buffers open multiple buffers
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 vim.cmd('set autochdir') -- Your working directory will always be the same as your working directory
+vim.cmd('set clipboard+=unnamedplus') -- Copies to the system register
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
+vim.o.showmatch = true
 -- Enable break indent
 vim.o.breakindent = true
 vim.o.guifont = "MesloLGS NF:13"

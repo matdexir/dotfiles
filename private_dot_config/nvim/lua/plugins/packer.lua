@@ -33,7 +33,12 @@ return require('packer').startup(function()
     -- My prefered autocompletion plugin
     use {'neovim/nvim-lspconfig'}
     use {'glepnir/lspsaga.nvim'}
-    use {'hrsh7th/nvim-compe'}
+
+		-- nvim-compe replacement
+    use {'hrsh7th/nvim-cmp'}
+    use {'hrsh7th/cmp-nvim-lsp'}
+    use {'hrsh7th/cmp-buffer'}
+		use {'onsails/lspkind-nvim'}
     -- Statusline plugin
     -- Yeah I could write my own but I am feeling lazy
     use {'hoob3rt/lualine.nvim'}
@@ -55,4 +60,7 @@ return require('packer').startup(function()
     -- Plugin for a zen nvim experience
     use {'folke/zen-mode.nvim'}
     use {'folke/twilight.nvim'}
+
+		-- Plugin for luasnip
+		use {'L3MON4D3/LuaSnip'}
 end)
