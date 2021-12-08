@@ -874,6 +874,7 @@ beautiful.useless_gap = 10
 -- Autostart program
 
 awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("cbatticon.sh")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("fcitx")
 awful.spawn.with_shell("nm-applet")

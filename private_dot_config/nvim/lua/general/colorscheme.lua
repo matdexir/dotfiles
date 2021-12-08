@@ -1,5 +1,5 @@
 -- vim.g.tokyonight_current_word = 'grey background'
-vim.g.tokyonight_style = 'storm' -- available: night, storm
+vim.g.tokyonight_style = 'night' -- available: night, storm
 vim.g.tokyonight_enable_italic = 1
 
 vim.cmd('colorscheme tokyonight')

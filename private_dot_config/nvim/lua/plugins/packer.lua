@@ -18,6 +18,7 @@ return require('packer').startup(function()
 
     -- Post-install/update hook with neovim command
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use {'nvim-treesitter/playground'}
 
     -- Text based file explorer
     use {'kevinhwang91/rnvimr', opt = true}
@@ -28,7 +29,7 @@ return require('packer').startup(function()
     -- UI to select things (files, grep results, open buffer$$%s...)
     use {
         'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
     }
     -- My prefered autocompletion plugin
     use {'neovim/nvim-lspconfig'}
@@ -63,4 +64,8 @@ return require('packer').startup(function()
 
 		-- Plugin for luasnip
 		use {'L3MON4D3/LuaSnip'}
+
+		-- Which key plugin
+		use {'liuchengxu/vim-which-key'}
+
 end)

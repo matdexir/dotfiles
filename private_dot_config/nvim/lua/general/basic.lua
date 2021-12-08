@@ -24,6 +24,7 @@ vim.o.relativenumber = true
 vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
 vim.o.updatetime = 300 -- Faster completion
+vim.o.timeoutlen = 300
 vim.cmd('filetype plugin on') -- filetype detection
 vim.o.mouse = "a" -- Enable your mouse
 vim.o.hidden = true -- Required to keep multiple buffers open multiple buffers

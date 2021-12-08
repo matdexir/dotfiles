@@ -1,7 +1,7 @@
 require'lspconfig'.efm.setup {
     capabilities = Capabilities,
     init_options = {documentFormatting = true},
-    filetypes = {"lua"},
+    filetypes = {},
     settings = {
         rootMarkers = {".git/"},
         languages = {
