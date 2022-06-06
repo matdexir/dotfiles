@@ -5,6 +5,7 @@ vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.termguicolors = true -- set term gui colors most terminals support this
 vim.o.splitright = true -- Vertical splits will automatically be to the right
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
+vim.g.python3_host_prog = "/bin/python3"
 
 -- identation
 -- vim.cmd('set ts=4') -- Insert 2 spaces for a tab

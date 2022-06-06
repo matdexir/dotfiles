@@ -5,5 +5,5 @@ endif
 if !isdirectory($HOME."/.config/nvim/undo-dir")
     call mkdir($HOME."/.config/nvim/undo-dir", "", 0700)
 endif
-set undodir=~/.vim/undo-dir
+set undodir=~/.config/nvim/undo-dir
 set undofile

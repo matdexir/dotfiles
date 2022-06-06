@@ -1,12 +1,12 @@
 local saga = require 'lspsaga'
 
-saga.init_lsp_saga {
+saga.setup {
     use_saga_diagnostic_sign = true,
     error_sign = '', -- 
     warn_sign = '',
     hint_sign = '',
     infor_sign = '',
-    dianostic_header_icon = '   ',
+    diagnostic_header_icon = '   ',
     code_action_icon = ' ',
     code_action_prompt = {
         enable = true,
@@ -30,7 +30,8 @@ saga.init_lsp_saga {
         quit = '<C-c>',
         exec = '<CR>' -- quit can be a table
     },
-    definition_preview_icon = '  '
+    definition_preview_icon = '  ',
+    border_style = "single"
 }
 -- vim.api.nvim_buf_set_keymap(0, 'n', 'K', ':LspSaga hover_doc<CR>', { noremap = true, silent = true})
 vim.cmd([[ nnoremap <silent> K :Lspsaga lsp_finder<CR> ]])

@@ -1,5 +1,8 @@
 local luasnip = require 'luasnip'
 
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
 local check_back_space = function()
     local col = vim.fn.col('.') - 1
     if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then

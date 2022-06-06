@@ -4,8 +4,8 @@
 	bare = false
 	logallrefupdates = true
 [remote "origin"]
-	url = git@github.com:matdexir/nvim-config.git
+	url = https://github.com/AstroNvim/AstroNvim
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "test"]
+[branch "main"]
 	remote = origin
-	merge = refs/heads/test
+	merge = refs/heads/main

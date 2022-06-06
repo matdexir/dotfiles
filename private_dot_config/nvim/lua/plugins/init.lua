@@ -2,6 +2,7 @@
 require("plugins.packer")
 require("plugins.dashboard")
 require("plugins.lualine")
+require("plugins.luasnip")
 require("plugins.nerdcommenter")
 require("plugins.nvim-cmp")
 -- require("plugins.nvim-compe")

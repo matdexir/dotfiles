@@ -1,3 +1,3 @@
 require'lspconfig'.vimls.setup{
-    capabilities = Capabilities
+    -- capabilities = Capabilities
 }

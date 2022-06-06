@@ -9,13 +9,14 @@ require("awful.autofocus")
 require("collision")()
 local lain = require("lain")
 -- Widget and layout library
-local wibox = require("wibox")
+-- local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
-local menubar = require("menubar")
+-- local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local xrandr = require("xrandr")
 -- hotkeys_popup = hotkeys_popup.widget.new({width=2400, height=1200})
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -132,7 +133,7 @@ mylauncher =
 )
 
 -- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+-- menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- Keyboard map indicator and switcher
@@ -140,14 +141,14 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+-- mytextclock = wibox.widget.textclock()
 
-local mycpu =
-    lain.widget.cpu {
-    settings = function()
-        widget:set_markup("" .. cpu_now.usage .. "%")
-    end
-}
+-- local mycpu =
+--     lain.widget.cpu {
+--     settings = function()
+--         widget:set_markup("" .. cpu_now.usage .. "%")
+--     end
+-- }
 
 -- Create a wibox for each screen and add it
 local taglist_buttons =
@@ -234,6 +235,7 @@ local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
         local wallpaper = beautiful.wallpaper
+				-- local wallpaper = "/home/matdexir/Downloads/Images/background/web.jpg"
         -- If wallpaper is a function, call it with the screen
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
@@ -251,7 +253,7 @@ awful.screen.connect_for_each_screen(
         set_wallpaper(s)
 
         -- Each screen has its own tag table.
-        awful.tag({"", "2", "3", "4", "5", "6", "7", "8", "9"}, s, awful.layout.layouts[1])
+        awful.tag({"1", "2", "3", "4", "5", "6", "7", "8", "9"}, s, awful.layout.layouts[1])
 
         -- Create a promptbox for each screen
         s.mypromptbox = awful.widget.prompt()
@@ -307,30 +309,30 @@ awful.screen.connect_for_each_screen(
         }
 
         -- Create the wibox
-        s.mywibox = awful.wibar({position = "top", screen = s, height = 30})
+        -- s.mywibox = awful.wibar({position = "top", screen = s, height = 35, opacity = 0.7 })
 
         -- Add widgets to the wibox
-        s.mywibox:setup {
-            layout = wibox.layout.align.horizontal,
-            {
-                -- Left widgets
-                layout = wibox.layout.fixed.horizontal,
-                mylauncher,
-                s.mytaglist,
-                s.mypromptbox
-            },
-            s.mytasklist, -- Middle widget
-            {
-                -- Right widgets
-                layout = wibox.layout.fixed.horizontal,
-                mykeyboardlayout,
-                mycpu,
-                -- mybattery,
-                wibox.widget.systray(),
-                mytextclock,
-                s.mylayoutbox
-            }
-        }
+    --     s.mywibox:setup {
+    --         layout = wibox.layout.align.horizontal,
+    --         {
+    --             -- Left widgets
+    --             layout = wibox.layout.fixed.horizontal,
+    --             mylauncher,
+    --             s.mytaglist,
+    --             s.mypromptbox
+    --         },
+    --         s.mytasklist, -- Middle widget
+    --         {
+    --             -- Right widgets
+    --             layout = wibox.layout.fixed.horizontal,
+    --             mykeyboardlayout,
+    --             mycpu,
+    --             -- mybattery,
+    --             wibox.widget.systray(),
+    --             mytextclock,
+    --             s.mylayoutbox
+    --         }
+    --     }
     end
 )
 -- }}}
@@ -587,15 +589,15 @@ globalkeys =
             }
         end,
         {description = "lua execute prompt", group = "awesome"}
-    ), -- Menubar
-    awful.key(
-        {modkey},
-        "p",
-        function()
-            menubar.show()
-        end,
-        {description = "show the menubar", group = "launcher"}
-    )
+    ) -- Menubar
+    -- awful.key(
+    --     {modkey},
+    --     "p",
+    --     function()
+    --         menubar.show()
+    --     end,
+    --     {description = "show the menubar", group = "launcher"}
+    -- )
 )
 
 clientkeys =
@@ -684,8 +686,7 @@ clientkeys =
     awful.key(
         {modkey, "Shift"},
         "m",
-        function(c)
-            c.maximized_horizontal = not c.maximized_horizontal
+        function(c) c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end,
         {description = "(un)maximize horizontally", group = "client"}
@@ -813,6 +814,8 @@ awful.rules.rules = {
             class = {
                 "Arandr",
                 "Blueman-manager",
+                "Android Studio",
+                "android-studio",
                 "Gpick",
                 "Kruler",
                 "MessageWin", -- kalarm.
@@ -874,11 +877,14 @@ beautiful.useless_gap = 10
 -- Autostart program
 
 awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("cbatticon.sh")
+-- awful.spawn.with_shell("cbatticon.sh")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("fcitx")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("volumeicon.sh")
+-- awful.spawn.with_shell("volumeicon.sh")
 awful.spawn.with_shell("blueman-applet")
-awful.spawn.with_shell("batterymon.sh")
+-- awful.spawn.with_shell("batterymon.sh")
+awful.spawn.with_shell("flameshot")
+awful.spawn.with_shell("emacs --daemon")
+awful.spawn.with_shell("~/.config/polybar/launch.sh --forest")
 

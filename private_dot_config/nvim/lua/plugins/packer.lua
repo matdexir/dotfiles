@@ -14,7 +14,7 @@ end
 -- I currently use packer.nvim as a package manager, written in full Lua
 return require('packer').startup(function()
     -- Packer can manage itself as an optional plugin
-    use "wbthomason/packer.nvim"
+    use {"wbthomason/packer.nvim"}
 
     -- Post-install/update hook with neovim command
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -33,7 +33,7 @@ return require('packer').startup(function()
     }
     -- My prefered autocompletion plugin
     use {'neovim/nvim-lspconfig'}
-    use {'glepnir/lspsaga.nvim'}
+    use {'tami5/lspsaga.nvim'}
 
 		-- nvim-compe replacement
     use {'hrsh7th/nvim-cmp'}
@@ -64,6 +64,9 @@ return require('packer').startup(function()
 
 		-- Plugin for luasnip
 		use {'L3MON4D3/LuaSnip'}
+    use { 'saadparwaiz1/cmp_luasnip' }
+		-- Extra snippets for LuaSnip
+		use {'rafamadriz/friendly-snippets'}
 
 		-- Which key plugin
 		use {'liuchengxu/vim-which-key'}
